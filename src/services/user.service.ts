@@ -11,7 +11,9 @@ class UserService {
         const { username, email, password } = userData;
         const userIdentifier = username || email;
     }
-    async logoutUser(): Promise<void> { }
+    async logoutUser(): Promise<void> {
+        console.log(`Logged out`);
+    }
 
 }
 

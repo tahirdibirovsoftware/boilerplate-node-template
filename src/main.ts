@@ -7,6 +7,6 @@ configDotenv();
 
 const app = express();
 app.use(express.json());
-app.use('user', userRouter);
+app.use('/user', userRouter);
 app.get('/', (req: Request, res: Response) => { res.status(200).json({ API: "V1" }) })
 bootstrap(mongoose, app);
