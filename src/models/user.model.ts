@@ -9,6 +9,10 @@ export interface IUser extends Document {
     role: UserRole
 }
 
+export type CreateUserDto = Omit<IUser, "role">
+export type LoginUserDto =
+    | { username: string; password: string; email?: undefined }
+    | { email: string; password: string; username?: undefined };
 
 const UserSchema: Schema<IUser> = new Schema<IUser>({
     username: { type: String, required: true, unique: true },
